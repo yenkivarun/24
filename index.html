@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Palette Studio & Academy | Pune's Best Nail Art</title>
+    <!-- Fonts: Oswald (Headings) & Poppins (Body) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===================================
+           NAIL PALETTE STUDIO - WHITE & GOLD LUXURY
+           =================================== */
+
+        :root {
+            /* Color Palette */
+            --primary-gold: #c5a059;
+            /* Luxury Gold */
+            --gold-light: #e6c88a;
+            /* Soft Gold */
+            --bg-white: #ffffff;
+            /* Pure White */
+            --bg-warm: #fdfbf7;
+            /* Warm Off-White/Beige for sections */
+            --bg-card: #ffffff;
+            /* Card White */
+            --text-dark: #1a1a1a;
+            /* Deep Black for Headings */
+            --text-grey: #555555;
+            /* Soft Grey for Body */
+            --border-light: #e5e5e5;
+            /* Subtle Borders */
+
+            /* Typography */
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+
+            /* Spacing */
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===================================
+           NAVIGATION
+           =================================== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            /* White Translucent */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar.scrolled {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 8%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===================================
+           HERO SECTION (VIDEO BACKGROUND)
+           =================================== */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: #000;
+            /* Fallback */
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 span {
+            color: var(--primary-gold);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: 40px;
+            color: #f0f0f0;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Buttons */
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #ffffff;
+            padding: 15px 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-gold:hover {
+            background: transparent;
+            color: var(--primary-gold);
+            border-color: #ffffff;
+        }
+
+        /* ===================================
+           ABOUT SECTION
+           =================================== */
+        section {
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .gold-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--primary-gold);
+            margin: 20px 0 30px;
+        }
+
+        .about-text p {
+            color: var(--text-grey);
+            margin-bottom: 25px;
+        }
+
+        .text-link-gold {
+            color: var(--primary-gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            padding: 15px;
+            border: 1px solid var(--primary-gold);
+            /* Gold Frame */
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ===================================
+           SERVICES GRID
+           =================================== */
+        #services {
+            background-color: var(--bg-warm);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .title-bar {
+            width: 80px;
+            height: 3px;
+            background: var(--primary-gold);
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-bottom: 3px solid transparent;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--primary-gold);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .service-info h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .service-info p {
+            color: var(--text-grey);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-small {
+            display: inline-block;
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid var(--text-dark);
+            color: var(--text-dark);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .btn-small:hover {
+            background: var(--primary-gold);
+            border-color: var(--primary-gold);
+            color: #ffffff;
+        }
+
+        /* ===================================
+           ACADEMY BANNER
+           =================================== */
+        .academy-banner {
+            background: linear-gradient(135deg, #c5a059 0%, #dab56d 100%);
+            padding: 80px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .banner-content {
+            text-align: left;
+        }
+
+        .banner-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .banner-content p {
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: #f9f9f9;
+        }
+
+        .btn-dark {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 15px 35px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .btn-dark:hover {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        /* ===================================
+           CONTACT SECTION
+           =================================== */
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--bg-white);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-details {
+            padding: 60px;
+            background: #fafafa;
+        }
+
+        .info-item {
+            margin-bottom: 35px;
+        }
+
+        .info-item h4 {
+            color: var(--primary-gold);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .info-item p {
+            color: var(--text-grey);
+        }
+
+        .map-wrapper {
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .map-wrapper iframe {
+            height: 100%;
+            width: 100%;
+            border: none;
+        }
+
+        /* ===================================
+           FLOATING ELEMENTS + FOOTER
+           =================================== */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            background: #111111;
+        }
+
+        footer p {
+            color: #888;
+        }
+
+        /* ===================================
+           RESPONSIVE
+           =================================== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .academy-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 5%;
+                background: #ffffff;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                display: none;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-details {
+                padding: 40px;
+            }
+
+            .map-wrapper {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">NAIL PALETTE</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#academy">Academy</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <!-- Video Background Container -->
+        <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source
+                    src="https://www.shutterstock.com/shutterstock/videos/1082749585/preview/stock-footage-close-up-of-woman-s-hands-with-red-nails-impatiently-and-passionately-tapping-her-fingers-on-waist.webm"
+                    type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1>CREATING <span>BEAUTY</span></h1>
+            <p>Get gorgeous nails at the best nail salon in Pune. We provide a wide range of nail arts, extensions, and
+                professional training.</p>
+            <a href="#contact" class="btn-gold">Book Your Session</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>The Best Nail Salon In Pune</h2>
+                <div class="gold-bar"></div>
+                <p>Nail Palette Studio & Academy is Hinjewadi’s premium destination for nail luxury. With a focus on
+                    hygiene and artistic precision, our expert technicians ensure every set of nails is a masterpiece.
+                    Whether you are looking for a relaxing pedicure or advanced 3D nail art, we are "Way Better" in
+                    every detail.</p>
+                <br>
+                <a href="#services" class="text-link-gold">DISCOVER OUR WORK <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&q=80&w=800"
+                    alt="Studio Image">
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <div class="title-bar"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1632345033839-21c73b2f3d39?q=80&w=600');">
+                    </div>
+                    <div class="service-info">
+                        <h3>Nail Extensions</h3>
+                        <p>Acrylic, Gel, and Polygel extensions for durable and long nails.</p>
+                        <a href="#contact" class="btn-small">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600');">
+                    </div>
+                    <div class="service-info">
+                        <h3>Nail Art</h3>
+                        <p>Bespoke 3D, Chrome, and hand-painted designs by certified artists.</p>
+                        <a href="#contact" class="btn-small">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=600');">
+                    </div>
+                    <div class="service-info">
+                        <h3>Spa Services</h3>
+                        <p>Luxurious D-Tan Manicures and relaxing Pedicures with massage.</p>
+                        <a href="#contact" class="btn-small">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="academy-banner" id="academy">
+        <div class="banner-content">
+            <h2>NAIL PALETTE ACADEMY</h2>
+            <p>Master the industry-standard techniques with our certification courses.</p>
+        </div>
+        <a href="#contact" class="btn-dark">Join the Academy</a>
+    </div>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quick Contact</h2>
+                <div class="title-bar"></div>
+            </div>
+            <div class="contact-box">
+                <div class="contact-details">
+                    <div class="info-item">
+                        <h4>ADDRESS</h4>
+                        <p>Shop No. 3, Fountain Market, Hinjewadi Phase 3, Pune, Maharashtra 411057</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>PHONE</h4>
+                        <p>+91 98765 43210 (Support Line)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>TIMING</h4>
+                        <p>Monday - Sunday: 11:00 AM - 9:00 PM</p>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.123456789!2d73.6987!3d18.5912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb0000000001%3A0x0!2sHinjewadi%20Phase%203!5e0!3m2!1sen!2sin!4v1234567890"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/919876543210" class="wa-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>© 2026 Nail Palette Studio & Academy | Designed for Excellence.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Mobile Menu Toggle ---
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileBtn && navLinks) {
+                mobileBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+
+                    // Icon Toggle
+                    const icon = mobileBtn.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-xmark');
+                    } else {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                // Close menu when link is clicked
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        const icon = mobileBtn.querySelector('i');
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+
+            // --- Smooth Scrolling ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const headerOffset = 80;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: "smooth"
+                            });
+                        }
+                    }
+                });
+            });
+
+            // --- Navbar Scroll Effect (White Theme) ---
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled'); // Adds white bg & shadow via CSS
+                } else {
+                    navbar.classList.remove('scrolled'); // Reverts to transparent/translucent
+                }
+            });
+
+            console.log("Nail Palette Studio (White Luxury - Consolidated) Loaded");
+        });
+    </script>
+</body>
+
+</html>
